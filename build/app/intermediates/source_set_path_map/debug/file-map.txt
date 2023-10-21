@@ -1,0 +1,13 @@
+com.example.custom_forms.app-jetified-window-1.0.0-beta04-0 /home/rahul/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/res
+com.example.custom_forms.app-jetified-annotation-experimental-1.1.0-1 /home/rahul/.gradle/caches/transforms-3/6c0c163cc77ae6c91f9f7dfcd179c29c/transformed/jetified-annotation-experimental-1.1.0/res
+com.example.custom_forms.app-core-1.6.0-2 /home/rahul/.gradle/caches/transforms-3/7e9df2ac2213a6bd3cef0f2f27870d79/transformed/core-1.6.0/res
+com.example.custom_forms.app-jetified-window-java-1.0.0-beta04-3 /home/rahul/.gradle/caches/transforms-3/ae81e06d24c799147c26814497a2a305/transformed/jetified-window-java-1.0.0-beta04/res
+com.example.custom_forms.app-debug-4 /home/rahul/CustomForms/android/app/src/debug/res
+com.example.custom_forms.app-main-5 /home/rahul/CustomForms/android/app/src/main/res
+com.example.custom_forms.app-pngs-6 /home/rahul/CustomForms/build/app/generated/res/pngs/debug
+com.example.custom_forms.app-resValues-7 /home/rahul/CustomForms/build/app/generated/res/resValues/debug
+com.example.custom_forms.app-rs-8 /home/rahul/CustomForms/build/app/generated/res/rs/debug
+com.example.custom_forms.app-mergeDebugResources-9 /home/rahul/CustomForms/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir
+com.example.custom_forms.app-mergeDebugResources-10 /home/rahul/CustomForms/build/app/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+com.example.custom_forms.app-merged_res-11 /home/rahul/CustomForms/build/app/intermediates/merged_res/debug
+com.example.custom_forms.app-packaged_res-12 /home/rahul/CustomForms/build/path_provider_android/intermediates/packaged_res/debug
