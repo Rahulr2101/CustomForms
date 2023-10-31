@@ -1,5 +1,8 @@
 import 'dart:convert';
 
+import 'package:custom_forms/widgets/placeholders/ContianerBox.dart';
+import 'package:custom_forms/widgets/placeholders/choiceBox.dart';
+import 'package:custom_forms/widgets/placeholders/imageBox.dart';
 import 'package:flutter/material.dart';
 import '/pages/blueprint_viewer_page.dart';
 import '/widgets/button.dart';
@@ -9,6 +12,7 @@ import '/widgets/placeholders/rowbox.dart';
 import '/widgets/placeholders/textbox.dart';
 import '/widgets/viewport_v1.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../widgets/hintlist.dart';
 
 // A class to represent a widget node in the JSON structure
 class WidgetNode {
@@ -70,6 +74,7 @@ var yourJsonString = '''
 TextEditingController jsonStringController = TextEditingController();
 
 class _BluePrintEditorv1PageState extends State<BluePrintEditorv1Page> {
+  int currentIndex = 0;
   WidgetNode serializeWidgetToNode(Widget widget) {
     if (widget is RowBox) {
       final List<WidgetNode> childrenNodes =
@@ -84,7 +89,17 @@ class _BluePrintEditorv1PageState extends State<BluePrintEditorv1Page> {
           widget.children.map((child) => serializeWidgetToNode(child)).toList();
       return WidgetNode(type: 'column', children: childrenNodes);
     } else if (widget is TextBox) {
-      return WidgetNode(type: 'textBox', hint: widget.hintText);
+      int tempIndex = currentIndex;
+      currentIndex = (currentIndex + 1) % hintlist.length;
+      return WidgetNode(
+          type: 'textBox',
+          hint: tempIndex < hintlist.length
+              ? hintlist[hintlist.keys.elementAt(tempIndex)]
+              : 'textbox');
+    } else if (widget is ChoiceBox) {
+      return WidgetNode(type: 'choiceBox');
+    } else if (widget is ImageBox) {
+      return WidgetNode(type: 'imageBox');
     }
     // You can add more conditions for other widgets as needed
 
@@ -131,6 +146,9 @@ class _BluePrintEditorv1PageState extends State<BluePrintEditorv1Page> {
                                   serializeWidgetToNode(layout);
                                   final serializedLayout =
                                       serializeWidgetToNode(layout);
+                                  // for (var item in hintlist) {
+                                  //   print(item);
+                                  // }
 
                                   // Convert the JSON structure to a JSON string
                                   final jsonLayout = serializedLayout.toJson();
@@ -194,15 +212,38 @@ class _BluePrintEditorv1PageState extends State<BluePrintEditorv1Page> {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    TextBox(
-                                      renderType: 0,
-                                    ),
                                     RowBox(
                                       renderType: 0,
                                     ),
                                     ColBox(
                                       renderType: 0,
                                     ),
+                                    ContainerBox(
+                                      renderType: 0,
+                                    )
+                                  ],
+                                ),
+                                Padding(
+                                    padding: EdgeInsets.all(10),
+                                    child: Text(
+                                      'Inputs',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 20),
+                                    )),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    TextBox(
+                                      renderType: 0,
+                                    ),
+                                    ChoiceBox(
+                                      renderType: 0,
+                                    ),
+                                    ImageBox(
+                                      renderType: 0,
+                                    )
                                   ],
                                 ),
                               ],

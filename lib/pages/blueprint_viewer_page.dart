@@ -1,9 +1,11 @@
 import 'dart:convert';
+import 'package:custom_forms/widgets/placeholders/choiceBox.dart';
 import 'package:flutter/material.dart';
 import '/pages/blueprint_editor_v1.dart';
 import '/widgets/placeholders/colbox.dart';
 import '/widgets/placeholders/rowbox.dart';
 import '/widgets/placeholders/textbox.dart';
+import '/widgets/placeholders/imageBox.dart';
 
 class BlueprintViewerPage extends StatefulWidget {
   const BlueprintViewerPage({super.key, required this.jsonString});
@@ -67,6 +69,14 @@ class _BlueprintViewerPageState extends State<BlueprintViewerPage> {
           return TextBox(
             renderType: 1,
             hintText: data['hint'],
+          );
+        case 'choiceBox':
+          return ChoiceBox(
+            renderType: 1,
+          );
+        case 'imageBox':
+          return ImageBox(
+            renderType: 1,
           );
         // Add more cases for other widget types as needed
         default:

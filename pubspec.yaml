@@ -66,6 +66,9 @@ flutter:
     - lib/assets/Row_Box.png
     - lib/assets/Text_Input_Box.png
     - lib/assets/pen_circle.png
+    - lib/assets/Choice_Input_Box.png
+    - lib/assets/Input_Image_Box.png
+    - lib/assets/Container.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

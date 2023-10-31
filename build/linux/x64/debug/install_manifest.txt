@@ -10,7 +10,10 @@
 /home/rahul/CustomForms/build/linux/x64/debug/bundle/data/flutter_assets/FontManifest.json
 /home/rahul/CustomForms/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.bin
 /home/rahul/CustomForms/build/linux/x64/debug/bundle/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+/home/rahul/CustomForms/build/linux/x64/debug/bundle/data/flutter_assets/lib/assets/Choice_Input_Box.png
 /home/rahul/CustomForms/build/linux/x64/debug/bundle/data/flutter_assets/lib/assets/Text_Input_Box.png
 /home/rahul/CustomForms/build/linux/x64/debug/bundle/data/flutter_assets/lib/assets/pen_circle.png
+/home/rahul/CustomForms/build/linux/x64/debug/bundle/data/flutter_assets/lib/assets/Input_Image_Box.png
+/home/rahul/CustomForms/build/linux/x64/debug/bundle/data/flutter_assets/lib/assets/Container.png
 /home/rahul/CustomForms/build/linux/x64/debug/bundle/data/flutter_assets/lib/assets/Row_Box.png
 /home/rahul/CustomForms/build/linux/x64/debug/bundle/data/flutter_assets/lib/assets/Column_Box.png

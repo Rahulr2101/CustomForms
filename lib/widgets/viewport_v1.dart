@@ -39,13 +39,6 @@ class _ViewportV1State extends State<ViewportV1> {
   // // Recursive Builder
   @override
   Widget build(BuildContext context) {
-    Widget layout = ListView.builder(
-      itemCount: acceptedData.length,
-      itemBuilder: (context, index) {
-        return acceptedData[index];
-      },
-    );
-
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -61,17 +54,21 @@ class _ViewportV1State extends State<ViewportV1> {
             child: Center(
               child: DragTarget<Widget>(
                 onAccept: (data) => setState(() {
-                  acceptedData.add(data);
+                  acceptedData.add(data); // Add the accepted widget to the list
                 }),
                 builder: (BuildContext context, List<Object?> candidateData,
                     List<dynamic> rejectedData) {
                   return Container(
-                      // height: 580,
-                      // width: 450,
-                      decoration: BoxDecoration(
-                          // color: Colors.deepPurpleAccent.shade200,
-                          borderRadius: BorderRadius.circular(5)),
-                      child: layout);
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: ListView.builder(
+                      itemCount: acceptedData.length,
+                      itemBuilder: (context, index) {
+                        return acceptedData[index];
+                      },
+                    ),
+                  );
                 },
               ),
             ),

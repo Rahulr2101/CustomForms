@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import '/widgets/button.dart';
 import '/widgets/icon_textinput_field.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../hintlist.dart';
 
 class TextBox extends StatefulWidget {
   TextBox({super.key, this.renderType = 0, this.hintText = 'Text Box'});
   final int renderType;
   String hintText;
+  String localHintText2 = '';
 
   @override
   State<TextBox> createState() => _TextBoxState();
@@ -14,6 +16,15 @@ class TextBox extends StatefulWidget {
 
 class _TextBoxState extends State<TextBox> {
   TextEditingController controller = TextEditingController();
+  String localHintText = '';
+  Key uniqueKey = UniqueKey();
+
+  @override
+  void initState() {
+    super.initState();
+    localHintText = widget.hintText;
+  }
+
   @override
   Widget build(BuildContext context) {
     if (widget.renderType == 0) {
@@ -86,7 +97,9 @@ class _TextBoxState extends State<TextBox> {
                   ),
                 );
               }).then((value) => setState(() {
-                widget.hintText = value;
+                localHintText = value;
+                widget.localHintText2 = localHintText;
+                hintlist[uniqueKey.toString()] = localHintText;
               }));
         },
         child: Container(
@@ -101,7 +114,7 @@ class _TextBoxState extends State<TextBox> {
             ),
             child: Center(
               child: Text(
-                widget.hintText,
+                localHintText,
                 style: GoogleFonts.fredoka(
                   color: const Color(0xFFA3A7BA),
                   fontSize: 17,
